@@ -1,0 +1,22 @@
+<div class="top-bar">
+  <div class="row">
+    <div class="top-bar-left">
+      <ul class="dropdown menu" data-dropdown-menu>
+        <li class="menu-text">Video Games</li>
+      </ul>
+    </div>
+    {{#if session.isAuthenticated}}
+      <div class="top-bar-right">
+        <ul class="menu">
+          <li><a {{action 'invalidateSession'}}>Logout</a></li>
+        </ul>
+      </div>
+    {{/if}}
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-12 columns">
+    {{outlet}}
+  </div>
+</div>

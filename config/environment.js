@@ -4,6 +4,7 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'authorizing-jsonapi-resources-client',
     environment: environment,
+    apiEndpoint: 'http://localhost:3000',
     rootURL: '/',
     locationType: 'auto',
     EmberENV: {
