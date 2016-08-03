@@ -2,11 +2,14 @@
   {{#each games as |game|}}
     <li class="video-game">
       <div class="row">
-        <div class="small-12 medium-6 columns">
+        <div class="small-12 medium-5 columns">
           <span class="title">{{game.title}}</span>
         </div>
-        <div class="small-12 medium-6 columns">
+        <div class="small-12 medium-5 columns">
           <span class="owner">{{game.user.username}}</span>
+        </div>
+        <div class="small-12 medium-2 columns">
+          <button type="button" class="expanded hollow alert button" {{action "deleteGame" game}}>Delete</button>
         </div>
       </div>
     </li>
