@@ -2,15 +2,34 @@
   {{#each games as |game|}}
     <li class="video-game">
       <div class="row">
-        <div class="small-12 medium-5 columns">
-          <span class="title">{{game.title}}</span>
-        </div>
-        <div class="small-12 medium-5 columns">
-          <span class="owner">{{game.user.username}}</span>
-        </div>
-        <div class="small-12 medium-2 columns">
-          <button type="button" class="expanded hollow alert button" {{action "deleteGame" game}}>Delete</button>
-        </div>
+        {{#if game.beingEdited}}
+
+          <div class="small-12 medium-8 columns">
+            {{input value=game.title}}
+          </div>
+          <div class="small-6 medium-2 columns">
+            <button type="button" class="expanded button" {{action "saveGame" game}}>Save</button>
+          </div>
+          <div class="small-6 medium-2 columns">
+            <button type="button" class="secondary expanded button" {{action "cancelEditing" game}}>Cancel</button>
+          </div>
+
+        {{else}}
+
+          <div class="small-12 medium-4 columns">
+            <span class="title">{{game.title}}</span>
+          </div>
+          <div class="small-12 medium-4 columns">
+            <span class="owner">{{game.user.username}}</span>
+          </div>
+          <div class="small-6 medium-2 columns">
+            <button type="button" class="expanded hollow button" {{action "editGame" game}}>Edit</button>
+          </div>
+          <div class="small-6 medium-2 columns">
+            <button type="button" class="expanded hollow alert button" {{action "deleteGame" game}}>Delete</button>
+          </div>
+
+        {{/if}}
       </div>
     </li>
   {{/each}}
