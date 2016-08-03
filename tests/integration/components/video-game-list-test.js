@@ -7,11 +7,11 @@ moduleForComponent('video-game-list', 'Integration | Component | video game list
 
 test('it renders', function(assert) {
   this.set('testGames', [
-    {title: 'Foo'},
-    {title: 'Bar'},
+    {title: 'Foo', user: {email: 'foo@example.com'}},
+    {title: 'Bar', user: {email: 'bar@example.com'}},
   ]);
 
   this.render(hbs`{{video-game-list games=testGames}}`);
 
-  assert.equal(this.$('.video-game').text(), 'FooBar');
+  assert.equal(this.$('.video-game .title').text(), 'FooBar');
 });

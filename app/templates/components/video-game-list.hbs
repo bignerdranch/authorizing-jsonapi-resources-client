@@ -1,5 +1,14 @@
 <ul class="no-bullet">
   {{#each games as |game|}}
-    <li class="video-game">{{game.title}}</li>
+    <li class="video-game">
+      <div class="row">
+        <div class="small-12 medium-6 columns">
+          <span class="title">{{game.title}}</span>
+        </div>
+        <div class="small-12 medium-6 columns">
+          <span class="owner">{{game.user.username}}</span>
+        </div>
+      </div>
+    </li>
   {{/each}}
 </ul>
