@@ -1,53 +1,27 @@
-# Authorizing-jsonapi-resources-client
+# Authorizing JSONAPI::Resources Client
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+A sample client for accessing the [Authorizing JSONAPI::Resources][api] web service.
 
-## Prerequisites
+Note that the client has an intentional bad UX: it displays "Edit" and "Delete" buttons even for records that the user doesn't have access to modify. This makes it easy to confirm that the rules preventing modifying other users' records are working.
 
-You will need the following things properly installed on your computer.
+## Requirements
 
-* [Git](http://git-scm.com/)
-* [Node.js](http://nodejs.org/) (with NPM)
-* [Bower](http://bower.io/)
-* [Ember CLI](http://ember-cli.com/)
-* [PhantomJS](http://phantomjs.org/)
+* NPM 2.7 or higher
+* Bower (version requirement unknown; whatever Ember 2.7 requires)
+* Ember-CLI 2.7 or higher
 
 ## Installation
 
-* `git clone <repository-url>` this repository
-* change into the new directory
-* `npm install`
-* `bower install`
+This app expects the [Authorizing JSONAPI::Resources][api] web service to be running and accessible at http://localhost:3000.
 
-## Running / Development
+```
+npm install
+bower install
+ember serve
+```
 
-* `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
+## License
 
-### Code Generators
+MIT
 
-Make use of the many generators for code, try `ember help generate` for more details
-
-### Running Tests
-
-* `ember test`
-* `ember test --server`
-
-### Building
-
-* `ember build` (development)
-* `ember build --environment production` (production)
-
-### Deploying
-
-Specify what it takes to deploy your app.
-
-## Further Reading / Useful Links
-
-* [ember.js](http://emberjs.com/)
-* [ember-cli](http://ember-cli.com/)
-* Development Browser Extensions
-  * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
-  * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
-
+[api]: https://github.com/bignerdranch/authorizing-jsonapi-resources
